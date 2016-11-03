@@ -25,7 +25,7 @@ export default class HomeBox extends React.Component {
         let user = {
             name: this.state.name,
             email: this.state.email
-        }; 
+        };
 
         $.ajax({
             method: 'POST',
@@ -33,7 +33,7 @@ export default class HomeBox extends React.Component {
             headers: {
                 "Accept" : "application/json",
                 "Content-Type" : "application/json"
-            },  
+            },
             data: JSON.stringify(user)
         }).done(function(response) {
             localStorage.setItem('sender', response.key);

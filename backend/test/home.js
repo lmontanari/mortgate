@@ -1,5 +1,4 @@
 var app = require('../app')
-  , should = require('should')
   , request = require('supertest')(app);
 
   describe('Load main page', function(){
@@ -21,3 +20,15 @@ var app = require('../app')
              });
     });
   });
+
+  // describe('Login', function(){
+  //   it('Should go to /chat when logging in', function(done){
+  //     var loginData = {usuario: {name: 'john', email: 'john@gmail.com'}};
+  //     request.post('/api/chats')
+  //            .send(loginData)
+  //            .end(function(err, res){
+  //              res.headers.location.should.eql('/chat');
+  //              done();
+  //            });
+  //   });
+  // });
