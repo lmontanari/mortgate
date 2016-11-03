@@ -11,6 +11,7 @@ var routes = require('./routes/index');
 var chatRoutes = require('./routes/chat');
 var http = require('http');
 var chatBot = require('./bot/chat.js');
+var config = require('./config.json');
 var app = express();
 
 app.use(session({
@@ -28,7 +29,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), config.MAX_AGE));
 
 app.use('/', routes);
 app.post('/api/chats', chatRoutes);

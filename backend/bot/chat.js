@@ -3,7 +3,6 @@ module.exports = function(server) {
 var io = require('socket.io').listen(server);
 var db = require('../repositories/db_connect')();
 
-
 function isItANegativeAnswer(message) {
     return compareStringsIgnoringCase(message, 'no', true);
 }
